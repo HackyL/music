@@ -12,8 +12,7 @@
       </div>
       <div class="recommend-list">
         <h1 class="list-title">热门歌单推荐</h1>
-        <ul>
-          
+        <ul>          
         </ul>
       </div>
     </div>
@@ -46,8 +45,16 @@
             this.recommends = res.data.slider;
           }
         })
+      },
+      _getDiscList() {
+        getDiscList().then((res) => {
+          if(res.code === ERR_OK) {
+            console.log();
+          }
+        })
       }
     },
+    
     components: {
       Slider
     }
