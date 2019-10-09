@@ -1,26 +1,35 @@
 <template>
-    <div class="singer" ref="singer">
-      <list-view @select="selectSinger" :data="singers" ref="list"></list-view>
+  <div class="singer" ref="singer">
+    singer
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      singers: []
+  import Singer from '@/common/js/singer'
+  import { getSingerList } from '@/api/singer'
+  import { ERR_OK } from '@/api/config'
+
+  export default {
+    data() {
+      return {
+        singers: []
+      }
+    },
+    created() {
+      this._getSingerList();
+    },
+    methods: {
+      _getSingerList() {
+        getSingerList().then((res) => {
+          if(res.code === ERR_OK) {
+            this.singers =  res.data.list;
+          }
+        })
+      }
+    },
+    components: {
     }
-  },
-  created() {
-
-  },
-  methods: {
-
-  },
-  components: {
-
   }
-}
 </script>
 
 <style scoped lang="scss">
