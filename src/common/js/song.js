@@ -1,5 +1,5 @@
-import { getLyric, getSongsUrl } from 'api/song'
-import { ERR_OK } from 'api/config'
+import { getLyric, getSongsUrl } from '@/api/song'
+import { ERR_OK } from '@/api/config'
 import { Base64 } from 'js-base64'
 
 export default class Song {
