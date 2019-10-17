@@ -1,11 +1,19 @@
 <template>
     <div>
-        search
+      search
     </div>
 </template>
 
 <script>
-export default { }
+import Slider from '@/base/slider/slider'
+
+export default { 
+  components: {
+    Slider
+  },
+
+
+}
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
