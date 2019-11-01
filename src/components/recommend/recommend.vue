@@ -6,7 +6,7 @@
             <div class="slider-content">
               <slider ref="slider">
                 <div v-for="(item,index) in recommends" :key="index">
-                  <a :href="item.linkUrl">
+                  <a>
                     <img @load="loadImage" class="needsclick" :src="item.picUrl">
                   </a>
                 </div>
@@ -31,7 +31,7 @@
         <div class="loading-container" v-show="!discList.length">
           <loading></loading>
         </div>
-      </scroll> 
+      </scroll>
   </div>
 </template>
 
@@ -42,7 +42,7 @@
   import { getRecommend, getDiscList } from '@/api/recommend'
   import { ERR_OK } from '@/api/config'
 
-  export default { 
+  export default {
     data() {
       return {
         recommends: [],
@@ -125,11 +125,14 @@
           display: flex;
           box-sizing: border-box;
           align-items: center;
-          padding: 0 20px 20px 20px;
+          padding: 0 40px 20px 40px;
           .icon {
             flex: 0 0 60px;
             width: 60px;
             padding-right: 20px;
+            img {
+              border-radius: 10px;
+            }
           }
           .text {
             display: flex;
